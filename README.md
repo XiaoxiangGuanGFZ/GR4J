@@ -10,7 +10,11 @@ packages required.
 
 This app doesn't have a tutorial here (yet), as the GUI of the app is straightforward and the main functions about this app focus
 on the hydrological modelling.
+## Data preparation
+GR4J is a daily hydrological model, and the required variables include precipitation (prec) [mm], potential evapotransporation (pet) [mm] and observed streamflow (Qobs)
+[m3/s]. The CSV is the suggested format to store the model data (see example DATA_Area4766_1982-2002.csv). 
 
+Within the data file, there should be 6 columns. The first 3 columns indicate the date (yy, mm, and dd). The last 3 columns are prec, pet, and Qobs respectively. 
 ## Reference
 [1]Edijatno, N. O. Nascimento, X. Yang, Z. Makhlouf, and C. Michel (1999), GR3J: a daily watershed model with three free parameters, Hydrol. Sci. J., 44, 263-277.
 
