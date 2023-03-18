@@ -2,7 +2,11 @@
 ## Model introduction
 The GR4J model is a catchment water balance model that relates runoff to rainfall and evapotranspiration using daily data. 
 The model contains two stores and has four parameters.
+
 See documents/GR4J模型计算说明.pdf for detailed model concept and algorithm.
+
+See the website [GR4J-SRG](https://wiki.ewater.org.au/display/SD41/GR4J+-+SRG#:~:text=The%20GR4J%20model%20is%20a,stores%20and%20has%20four%20parameters.)
+for the history and development of the GR4J model.
 ## Software introducion
 It is a Web-based application developed by R project and Shiny package. Naturally, several other R packages are also loaded in the 
 software. Before launching the web-based application, the required packages should be ready. See the first several commands in app.r for the 
