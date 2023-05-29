@@ -1,6 +1,13 @@
 ########################
 #---------GR4J----------
-########################
+#
+# web-based application for GR4J hydrological modelling
+# this application also incorporates the SCE-UA algorithm 
+#   for parameter optimization.
+# Language: in Chinese only
+# Author: Xiaoxiang Guan
+# Email: xxguan@hhu.edu.cn
+# -------------------------
 
 library(shiny)
 library(rtop)

@@ -1,5 +1,16 @@
 #-------------SCE-UA  GR4J-------------------
-library(rtop)
+# GR4J hydrological modelling 
+# incorporate SCE-UA algorithm for parameter optimization
+# 
+# Author: Xiaoxiang Guan 
+# Email: xxguan@hhu.edu.cn
+# -------------------------
+
+
+# attach the package rtop into R session
+library(rtop)  # access SCE-UA algorithm
+
+# -------- GR4J hydrological model algorithm -------
 GR4J <- function(P,E,k1,k2,x1,x2,x3,x4) {
   # x1 = 350  #产流水库容量，mm
   # x2 = 0   #地下水交换系数，mm
@@ -83,7 +94,7 @@ GR4J <- function(P,E,k1,k2,x1,x2,x3,x4) {
   out = data.frame(P,E,Pr,RUNOFF) #,ET,EXC,INF,REC,GW,SMS
   return(out)
 }
-
+# ------ two unit-hydrograph curves ------
 uh1 <- function(x4) {
   if (x4 <= 1) {
     u = 1
@@ -132,14 +143,17 @@ uh2 <- function(x4) {
   }
   return(u)
 }
-dat = read.table("/池潭2014-2016-daily-PEQ.csv",header = T,sep = ",")
+
+# ---------- main ------------
+# import the data
+dat = read.table("./DATA_Area4766_1982-2002.csv",header = T,sep = ",")
 P = dat[,5]
 E = dat[,6]
 Q = dat[,7]
-Validinput_P <<- P
+Validinput_P <<- P  # set global variable
 Validinput_E <<- E
 Validinput_Q <<- Q
-Validinput_DAREA <<- 4766
+Validinput_DAREA <<- 4766  # the area of the catchment
 
 fit = function(x) {
   x1 = x[1]; x2 = x[2];
@@ -155,12 +169,14 @@ fit = function(x) {
   return(1-R2)
 }
 
-
+# define the parameter ranges 
 paralower = c(50,-9,10,0.5)
 paraupper = c(1500,9,500,5)
 parainitial=c(500,1,200,2.1)
+# optimizing
 sceua_GR4J = sceua(fit, pars = parainitial, lower = paralower, 
                   upper = paraupper, maxn = 10000, pcento = 0.00001,iprint = 0)
+# validating 
 para = sceua_GR4J$par
 x1 = para[1]
 x2 = para[2]
