@@ -41,13 +41,7 @@ E_s = \frac{S(2-\frac{S}{x_1})\tanh(\frac{E_n}{x_1})}{1+(1-\frac{S}{x_1}) \tanh(
 $$
 
 The water content in the production store is then
-updated with:
-
-$$
-S=S-E_s + P_s
-$$
-
-Note that $S$ can never exceed $x_1$. 
+updated with: $S=S-E_s + P_s$. Note that $S$ can never exceed $x_1$.
 
 A percolation leakage $Perc$ from the production
 store is then calculated as a power function of
@@ -57,11 +51,7 @@ $$
 Prec = S (1 - (1 + ( \frac{4S}{9x_1})^4)^{-1/4})
 $$
 
-$Prec$ is always lower than $S$. The reservoir content becomes: 
-
-$$
-S = S- Perc
-$$
+$Prec$ is always lower than $S$. The reservoir content becomes: $S = S- Perc$. 
 
 ### Linear routing with unit hydrographs
 
