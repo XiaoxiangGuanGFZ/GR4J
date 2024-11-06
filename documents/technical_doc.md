@@ -22,7 +22,8 @@ if $P \geq E$, then $P_n = P - E$ and $E_n = 0$, otherwise $P_n=0$, and $E_n = E
 
 ### Production store
 
-In case $P_n$ is not zero, a part $P_s$ of $P_n$ fills the production store. It is determined as a function of the level $S$ in the store by:
+In case $P_n$ is not zero, a part $P_s$ of $P_n$ fills the production store. 
+It is determined as a function of the level $S$ in the store by:
 
 $$
 P_s = \frac{x_1 (1 - (\frac{S}{x_1})^2) \tanh{(\frac{P_n}{x_1})}}{1 + \frac{S}{x_1} \tanh(\frac{P_n}{x_1})}
