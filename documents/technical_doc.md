@@ -83,11 +83,11 @@ denoted by SH1 and SH2, respectively. SH1 is
 defined along time $t$ by:
 
 $$
-t \leq 0, SH1(t)=0
+t \leq 0, SH1(t) = 0
 $$
 
 $$
-0<t<x_4, SH1(t)=(\frac{t}{x_4})^{5/2}
+0 < t < x_4, SH1(t) = (\frac{t}{x_4})^{5/2}
 $$
 
 $$
@@ -101,7 +101,7 @@ $$
 The SH2 is derived by:
 
 $$
-0<t<x_4, SH2(t) = \frac{1}{2} (\frac{t}{x_4})^{5/2}
+0 < t < x_4, SH2(t) = \frac{1}{2} (\frac{t}{x_4})^{5/2}
 $$
 
 $$
@@ -138,7 +138,7 @@ store is updated by adding the output Q9 of UH1 and
 $F$ as follows:
 
 $$
-R=\max(0, R + Q9 + F)
+R = \max(0, R + Q9 + F)
 $$
 
 The outflow $Q_r$ of the reservoir is then calculated as:
